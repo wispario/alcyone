@@ -1,0 +1,20 @@
+{
+  "chapters": [
+    {
+      "id": 1,
+      "folder": "ch-1",
+      "title": "Глава 1: Начало",
+      "cover": "chapters/ch-1/01.jpg",
+      "totalPages": 15,
+      "ext": "jpg"
+    },
+    {
+      "id": 2,
+      "folder": "ch-2",
+      "title": "Глава 2: Госпожа",
+      "cover": "chapters/ch-2/01.jpg",
+      "totalPages": 11,
+      "ext": "jpg"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Reader</title>
+    <!-- Мгновенное применение темы до рендеринга страницы -->
+    <script>
+        if (localStorage.getItem('comic_theme') === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        }
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css"> <!-- или ./assets/css/style.css для корня -->
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="site-title">Alcyone</a>
+        <div class="header-controls">
+            <button id="lang-switch" class="icon-btn">EN</button>
+            <button id="theme-toggle" class="icon-btn">🌙 Темная</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">Главы</h2>
+        <div id="chapters-grid" class="chapters-grid"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const res = await fetch('config.json');
+            const data = await res.json();
+            const grid = document.getElementById('chapters-grid');
+            
+            data.chapters.forEach(ch => {
+    const card = document.createElement('a');
+    card.href = `reader.html?ch=${ch.id}&p=1`;
+    card.className = 'chapter-card';
+    card.innerHTML = `
+        <div class="chapter-cover-wrapper">
+            <img src="${ch.cover}" alt="${ch.title}" class="chapter-cover" loading="lazy">
+            <div class="chapter-info">
+                <h3>${ch.title}</h3>
+            </div>
+        </div>
+    `;
+    grid.appendChild(card);
+});
+        });
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
