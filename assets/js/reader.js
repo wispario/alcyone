@@ -36,7 +36,24 @@ function initReader(chapter, prevChapter, nextChapter, currentPage) {
     const closeModalBtn = document.getElementById('close-modal');
     const pagesGrid = document.getElementById('pages-grid');
 
-    // Управление отображением кнопки "Следующая глава"
+    const isEnglish = window.location.pathname.includes('/en/');
+
+    // Настройка левой кнопки (Предыдущая глава или Возврат к списку глав)
+    if (backBtn) {
+        if (prevChapter) {
+            backBtn.textContent = isEnglish ? '← Previous' : '← Предыдущая';
+            backBtn.addEventListener('click', () => {
+                window.location.href = `reader.html?ch=${prevChapter.id}&p=1`;
+            });
+        } else {
+            backBtn.textContent = isEnglish ? '← Chapters' : '← Главы';
+            backBtn.addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+        }
+    }
+
+    // Управление отображением кнопки "Следующая глава" справа
     if (nextChapterBtn) {
         if (nextChapter) {
             nextChapterBtn.classList.remove('hidden');
@@ -54,33 +71,33 @@ function initReader(chapter, prevChapter, nextChapter, currentPage) {
     }
 
     function renderPage(page) {
-    if (page > chapter.totalPages) {
-        if (nextChapter) {
-            window.location.href = `reader.html?ch=${nextChapter.id}&p=1`;
-        } else {
-            window.location.href = 'index.html';
+        if (page > chapter.totalPages) {
+            if (nextChapter) {
+                window.location.href = `reader.html?ch=${nextChapter.id}&p=1`;
+            } else {
+                window.location.href = 'index.html';
+            }
+            return;
         }
-        return;
-    }
-    
-    if (page < 1) {
-        if (prevChapter) {
-            window.location.href = `reader.html?ch=${prevChapter.id}&p=${prevChapter.totalPages}`;
+        
+        if (page < 1) {
+            if (prevChapter) {
+                window.location.href = `reader.html?ch=${prevChapter.id}&p=${prevChapter.totalPages}`;
+            }
+            return;
         }
-        return;
-    }
 
-    const newUrl = `?ch=${chapter.id}&p=${page}`;
-    window.history.replaceState({ ch: chapter.id, p: page }, '', newUrl);
+        const newUrl = `?ch=${chapter.id}&p=${page}`;
+        window.history.replaceState({ ch: chapter.id, p: page }, '', newUrl);
 
-    currentPage = page;
-    imgElement.src = getPageImageUrl(currentPage);
-    
-    // Применяем сохраненный режим отображения к загруженной странице
-    const currentMode = localStorage.getItem('comic_view_mode') || 'full';
-    applyViewMode(imgElement, currentMode);
+        currentPage = page;
+        imgElement.src = getPageImageUrl(currentPage);
+        
+        // Применяем сохраненный режим отображения к загруженной странице
+        const currentMode = localStorage.getItem('comic_view_mode') || 'full';
+        applyViewMode(imgElement, currentMode);
 
-    progressBtn.textContent = `${currentPage} / ${chapter.totalPages}`;
+        progressBtn.textContent = `${currentPage} / ${chapter.totalPages}`;
     }
 
     renderPage(currentPage);
@@ -128,10 +145,6 @@ function initReader(chapter, prevChapter, nextChapter, currentPage) {
         }
     }, { passive: true });
 
-    backBtn.addEventListener('click', () => {
-        window.location.href = 'index.html';
-    });
-
     // Модальное окно прогресса
     progressBtn.addEventListener('click', () => {
         pagesGrid.innerHTML = '';
@@ -152,4 +165,13 @@ function initReader(chapter, prevChapter, nextChapter, currentPage) {
     modal.addEventListener('click', (e) => {
         if (e.target === modal) modal.classList.remove('active');
     });
+}
+
+function applyViewMode(imgElement, mode) {
+    imgElement.classList.remove('mode-full', 'mode-classic');
+    if (mode === 'classic') {
+        imgElement.classList.add('mode-classic');
+    } else {
+        imgElement.classList.add('mode-full');
+    }
 }
