@@ -1,0 +1,68 @@
+{
+  "chapters": [
+    {
+      "id": 1,
+      "folder": "ch-1",
+      "title": "Episode 1: Beginnig",
+      "cover": "chapters/ch-1/01.webp",
+      "totalPages": 19,
+      "ext": "webp"
+    },
+    {
+      "id": 2,
+      "folder": "ch-2",
+      "title": "Episode 2: Lady",
+      "cover": "chapters/ch-2/01.webp",
+      "totalPages": 10,
+      "ext": "webp"
+    },
+    {
+      "id": 3,
+      "folder": "ch-3",
+      "title": "Episode 3: Examination",
+      "cover": "chapters/ch-3/01.webp",
+      "totalPages": 12,
+      "ext": "webp"
+    },
+    {
+      "id": 4,
+      "folder": "ch-4",
+      "title": "Episode 4: Are we passed?",
+      "cover": "chapters/ch-4/01.webp",
+      "totalPages": 18,
+      "ext": "webp"
+    },
+    {
+      "id": 5,
+      "folder": "ch-5",
+      "title": "Episode 5: Hawk vs Wolf",
+      "cover": "chapters/ch-5/01.webp",
+      "totalPages": 32,
+      "ext": "webp"
+    },
+    {
+      "id": 6,
+      "folder": "ch-6",
+      "title": "Episode 6: The bear whore",
+      "cover": "chapters/ch-6/01.webp",
+      "totalPages": 18,
+      "ext": "webp"
+    },
+    {
+      "id": 7,
+      "folder": "ch-7",
+      "title": "Episode 7: I understand p.1",
+      "cover": "chapters/ch-7/01.webp",
+      "totalPages": 14,
+      "ext": "webp"
+    },
+    {
+      "id": 8,
+      "folder": "ch-8",
+      "title": "Episode 8: I understand p.2",
+      "cover": "chapters/ch-7/01.webp",
+      "totalPages": 9,
+      "ext": "webp"
+    }
+  ]
+}

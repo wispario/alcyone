@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading — Alcyone</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="../icon.png">
+    <link rel="apple-touch-icon" href="../icon.png">
+    <script>
+        if (localStorage.getItem('comic_theme') === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        }
+        if (window.innerWidth > 768) {
+            const savedMode = localStorage.getItem('comic_view_mode') || 'full';
+            document.documentElement.classList.add('mode-' + savedMode);
+        } else {
+            document.documentElement.classList.add('mode-full');
+        }
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113884728', 'ym');
+
+        ym(113884728, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/113884728" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="site-title">Alcyone</a>
+        <div class="header-controls">
+            <button id="mode-toggle" class="icon-btn">↔️ Full</button>
+            <button id="theme-toggle" class="icon-btn">☀️ Light</button>
+        </div>
+    </header>
+
+    <div class="reader-container">
+        <div id="comic-view" class="comic-view">
+            <img id="comic-page-img" class="comic-image" src="" alt="Comic page">
+        </div>
+
+        <div class="reader-nav-panel">
+            <button id="back-btn" class="nav-btn">← Chapters</button>
+            <button id="progress-btn" class="progress-btn">1 / 15</button>
+            <button id="next-chapter-btn" class="nav-btn">Next →</button>
+        </div>
+    </div>
+
+    <div id="pages-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Page</h3>
+                <button id="close-modal" class="close-modal">&times;</button>
+            </div>
+            <div id="pages-grid" class="pages-grid"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/reader.js"></script>
+</body>
+</html>

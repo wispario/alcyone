@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alcyone - Language Selection</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="./icon.png">
+    <link rel="apple-touch-icon" href="./icon.png">
+    <script>
+        if (localStorage.getItem('comic_theme') === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        }
+        if (window.innerWidth > 768) {
+            const savedMode = localStorage.getItem('comic_view_mode') || 'full';
+            document.documentElement.classList.add('mode-' + savedMode);
+        } else {
+            document.documentElement.classList.add('mode-full');
+        }
+    </script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113884728', 'ym');
+
+        ym(113884728, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/113884728" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body class="gateway-body">
+    <div class="gateway-container">
+        <h1>Выберите язык / Choose Language</h1>
+        <div class="gateway-buttons">
+            <button class="lang-btn" data-lang="ru">Русский</button>
+            <button class="lang-btn" data-lang="en">English</button>
+        </div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

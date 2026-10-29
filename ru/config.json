@@ -1,0 +1,196 @@
+{
+  "chapters": [
+    {
+      "id": 1,
+      "folder": "ch-1",
+      "title": "Глава 1: Начало",
+      "cover": "chapters/ch-1/01.webp",
+      "totalPages": 15,
+      "ext": "webp"
+    },
+    {
+      "id": 2,
+      "folder": "ch-2",
+      "title": "Глава 2: Госпожа",
+      "cover": "chapters/ch-2/01.webp",
+      "totalPages": 10,
+      "ext": "webp"
+    },
+    {
+      "id": 3,
+      "folder": "ch-3",
+      "title": "Глава 3: Экзамен",
+      "cover": "chapters/ch-3/01.webp",
+      "totalPages": 12,
+      "ext": "webp"
+    },
+    {
+      "id": 4,
+      "folder": "ch-4",
+      "title": "Глава 4: Мы прошли?",
+      "cover": "chapters/ch-4/01.webp",
+      "totalPages": 18,
+      "ext": "webp"
+    },
+    {
+      "id": 5,
+      "folder": "ch-5",
+      "title": "Глава 5: Ястреб против волка",
+      "cover": "chapters/ch-5/01.webp",
+      "totalPages": 32,
+      "ext": "webp"
+    },
+    {
+      "id": 6,
+      "folder": "ch-6",
+      "title": "Глава 6: Медвежья шлюха",
+      "cover": "chapters/ch-6/01.webp",
+      "totalPages": 18,
+      "ext": "webp"
+    },
+    {
+      "id": 7,
+      "folder": "ch-7",
+      "title": "Глава 7: Я понимаю ч.1",
+      "cover": "chapters/ch-7/01.webp",
+      "totalPages": 14,
+      "ext": "webp"
+    },
+    {
+      "id": 8,
+      "folder": "ch-8",
+      "title": "Глава 8: Я понимаю ч.2",
+      "cover": "chapters/ch-7/01.webp",
+      "totalPages": 9,
+      "ext": "webp"
+    },
+    {
+      "id": 9,
+      "folder": "ch-9",
+      "title": "Глава 9: ... ч.1",
+      "cover": "chapters/ch-9/01.webp",
+      "totalPages": 11,
+      "ext": "webp"
+    },
+    {
+      "id": 10,
+      "folder": "ch-10",
+      "title": "Глава 10: ... ч.2",
+      "cover": "chapters/ch-9/01.webp",
+      "totalPages": 5,
+      "ext": "webp"
+    },
+    {
+      "id": 11,
+      "folder": "ch-11",
+      "title": "Глава 11: Кошкин дом ч.1",
+      "cover": "chapters/ch-11/01.webp",
+      "totalPages": 9,
+      "ext": "webp"
+    },
+    {
+      "id": 12,
+      "folder": "ch-12",
+      "title": "Глава 12: Кошкин дом ч.2",
+      "cover": "chapters/ch-11/01.webp",
+      "totalPages": 8,
+      "ext": "webp"
+    },
+    {
+      "id": 13,
+      "folder": "ch-13",
+      "title": "Глава 13: Кошкин дом ч.3",
+      "cover": "chapters/ch-11/01.webp",
+      "totalPages": 9,
+      "ext": "webp"
+    },
+    {
+      "id": 14,
+      "folder": "ch-14",
+      "title": "Глава 14: Кошкин дом ч.4",
+      "cover": "chapters/ch-11/01.webp",
+      "totalPages": 7,
+      "ext": "webp"
+    },
+    {
+      "id": 15,
+      "folder": "ch-15",
+      "title": "Глава 15: Девушка c портрета ч.1",
+      "cover": "chapters/ch-15/01.webp",
+      "totalPages": 8,
+      "ext": "webp"
+    },
+    {
+      "id": 16,
+      "folder": "ch-16",
+      "title": "Глава 16: Девушка c портрета ч.2",
+      "cover": "chapters/ch-15/01.webp",
+      "totalPages": 5,
+      "ext": "webp"
+    },
+    {
+      "id": 17,
+      "folder": "ch-17",
+      "title": "Глава 17: B западне ч.1",
+      "cover": "chapters/ch-17/01.webp",
+      "totalPages": 11,
+      "ext": "webp"
+    },
+    {
+      "id": 18,
+      "folder": "ch-18",
+      "title": "Глава 18: B западне ч.2",
+      "cover": "chapters/ch-17/01.webp",
+      "totalPages": 12,
+      "ext": "webp"
+    },
+    {
+      "id": 19,
+      "folder": "ch-19",
+      "title": "Глава 19: B западне ч.3",
+      "cover": "chapters/ch-17/01.webp",
+      "totalPages": 10,
+      "ext": "webp"
+    },
+    {
+      "id": 20,
+      "folder": "ch-20",
+      "title": "Глава 20: B западне ч.4",
+      "cover": "chapters/ch-17/01.webp",
+      "totalPages": 12,
+      "ext": "webp"
+    },
+    {
+      "id": 21,
+      "folder": "ch-21",
+      "title": "Глава 21: B западне ч.5",
+      "cover": "chapters/ch-17/01.webp",
+      "totalPages": 13,
+      "ext": "webp"
+    },
+    {
+      "id": 22,
+      "folder": "ch-22",
+      "title": "Глава 22: Священная земля ч.1",
+      "cover": "chapters/ch-22/01.webp",
+      "totalPages": 16,
+      "ext": "webp"
+    },
+    {
+      "id": 23,
+      "folder": "ch-23",
+      "title": "Глава 23: Священная земля ч.2",
+      "cover": "chapters/ch-22/01.webp",
+      "totalPages": 10,
+      "ext": "webp"
+    },
+    {
+      "id": 24,
+      "folder": "ch-24",
+      "title": "Глава 24: Священная земля ч.3",
+      "cover": "chapters/ch-22/01.webp",
+      "totalPages": 11,
+      "ext": "webp"
+    }
+  ]
+}
