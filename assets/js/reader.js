@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         const prevChapter = data.chapters[chapterIndex - 1] || null;
         const nextChapter = data.chapters[chapterIndex + 1] || null;
 
-        initReader(chapter, prevChapter, nextChapter, pageNum);
+        initReader(chapter, prevChapter, nextChapter, pageNum, data.chapters);
     } catch (error) {
         console.error('Error loading config:', error);
     }
 });
 
-function initReader(chapter, prevChapter, nextChapter, currentPage) {
+function initReader(chapter, prevChapter, nextChapter, currentPage, allChapters) {
     const imgElement = document.getElementById('comic-page-img');
     const progressBtn = document.getElementById('progress-btn');
     const backBtn = document.getElementById('back-btn');
@@ -36,7 +36,41 @@ function initReader(chapter, prevChapter, nextChapter, currentPage) {
     const closeModalBtn = document.getElementById('close-modal');
     const pagesGrid = document.getElementById('pages-grid');
 
+    // Элементы бокового меню глав (Drawer)
+    const chaptersBtn = document.getElementById('chapters-btn');
+    const chaptersDrawer = document.getElementById('chapters-drawer');
+    const chaptersOverlay = document.getElementById('chapters-overlay');
+    const chaptersClose = document.getElementById('chapters-close');
+    const chaptersList = document.getElementById('chapters-list');
+    const chaptersDrawerTitle = document.getElementById('chapters-drawer-title');
+
     const isEnglish = window.location.pathname.includes('/en/');
+
+    // Локализация текстов панели глав
+    if (chaptersDrawerTitle) chaptersDrawerTitle.textContent = isEnglish ? 'Chapters' : 'Главы';
+    if (chaptersBtn) chaptersBtn.textContent = isEnglish ? 'Chapters' : 'Главы';
+
+    // Функция управления боковым меню глав
+    function toggleChaptersDrawer() {
+        chaptersDrawer.classList.toggle('active');
+        chaptersOverlay.classList.toggle('active');
+    }
+
+    if (chaptersBtn) chaptersBtn.addEventListener('click', toggleChaptersDrawer);
+    if (chaptersClose) chaptersClose.addEventListener('click', toggleChaptersDrawer);
+    if (chaptersOverlay) chaptersOverlay.addEventListener('click', toggleChaptersDrawer);
+
+    // Заполнение текстового списка глав
+    if (chaptersList) {
+        chaptersList.innerHTML = '';
+        allChapters.forEach(ch => {
+            const item = document.createElement('a');
+            item.href = `reader.html?ch=${ch.id}&p=1`;
+            item.className = `chapter-drawer-item ${ch.id === chapter.id ? 'active' : ''}`;
+            item.textContent = ch.title;
+            chaptersList.appendChild(item);
+        });
+    }
 
     if (backBtn) {
         if (prevChapter) {
@@ -107,7 +141,7 @@ function initReader(chapter, prevChapter, nextChapter, currentPage) {
     });
 
     document.addEventListener('keydown', (e) => {
-        if (modal.classList.contains('active')) return;
+        if (modal.classList.contains('active') || (chaptersDrawer && chaptersDrawer.classList.contains('active'))) return;
 
         if (e.key === 'ArrowRight' || e.key === ' ') {
             e.preventDefault();

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Чтение - Алкиона</title>
     <link rel="icon" type="image/png" sizes="512x512" href="../icon.png">
     <link rel="apple-touch-icon" href="../icon.png">
+    <title>Чтение комикса — Алкиона</title>
     <script>
         if (localStorage.getItem('comic_theme') === 'dark') {
             document.documentElement.classList.add('dark-theme');
@@ -35,7 +35,10 @@
 </head>
 <body>
     <header class="site-header">
-        <a href="index.html" class="site-title">Алкиона</a>
+        <div class="header-left">
+            <a href="index.html" class="site-title">Алкиона</a>
+            <button id="chapters-btn" class="icon-btn">Главы</button>
+        </div>
         <div class="header-controls">
             <button id="mode-toggle" class="icon-btn">↔️ Ширина</button>
             <button id="theme-toggle" class="icon-btn">☀️ Светлая</button>
@@ -54,6 +57,17 @@
         </div>
     </div>
 
+    <!-- Боковая панель со списком глав -->
+    <div id="chapters-overlay" class="chapters-overlay"></div>
+    <nav id="chapters-drawer" class="chapters-drawer">
+        <div class="chapters-drawer-header">
+            <h3 id="chapters-drawer-title">Главы</h3>
+            <button id="chapters-close" class="close-modal">&times;</button>
+        </div>
+        <div id="chapters-list" class="chapters-drawer-list"></div>
+    </nav>
+
+    <!-- Модальное окно быстрого перехода по страницам -->
     <div id="pages-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
